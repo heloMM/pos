@@ -79,6 +79,10 @@
       <version>6.9.4</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>com.revof11</groupId>
+          <artifactId>java-circleci</artifactId>
+          <version>0.0.3</version>
+      </dependency>
   </dependencies>
-
 </project>

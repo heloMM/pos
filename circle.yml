@@ -1,21 +1,6 @@
-machine:
-  timezone:
-    America/New_York
-
-  java:
-    version: oraclejdk8
-
-dependencies:
-  pre:
-    - sudo rsync -r --include=*/ --include=*.jar --exclude=* .jdk-overlay/jre $JAVA_HOME
-
-general:
-  branches:
-    only:
-      - master
-      - develop
-
-test:
-  post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+deployment:
+    homolog:
+        branch: master
+        commands:
+          - scp -oStrictHostKeyChecking=no -i dev/leandro-teste.pem smart-share-deploy/target/smartshare.war ec2-user@54.94.226.70:~
+         # - ssh -oStrictHostKeyChecking=no -i dev/leandro-teste.pem ec2-user@54.94.226.70 "/home/ec2-user/deploy-cron.sh"(esse cron é para parar o wildfly, copiar o war pra pasta correta "standalone/deploys - algo assim" e depois reinicia o wildfly)
