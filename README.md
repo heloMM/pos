@@ -105,3 +105,6 @@ execute a push.  From there your CircleCI integration with your GitHub account
 should take over and all should be happy.  You're notice in our classes and test
 classes in this project that we specifically look for the Bouncy Castle license
 and an appropriate key length from within Java core.  That's it!
+
+
+Leandro
