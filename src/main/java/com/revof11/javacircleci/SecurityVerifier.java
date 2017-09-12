@@ -84,6 +84,7 @@ public class SecurityVerifier {
    * Runs our basic assertion(s) for system security checks.
    * @see #isBouncyCastleInstalled()
    * @see #isUnlimitedStrength()
+   * bla
    */
   public void assertSecureSystem() {
     if (LOG.isInfoEnabled()) {
